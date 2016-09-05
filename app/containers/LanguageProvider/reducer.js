@@ -9,16 +9,16 @@ import {
 } from './constants';
 
 const initialState = {
-  locale: 'en',
+    locale: 'en',
 };
 
 function languageProviderReducer(state = initialState, action) {
-  switch (action.type) {
+    switch (action.type) {
     case CHANGE_LOCALE:
-      return { ...state, locale: action.locale };
+        return { ...state, locale: action.locale };
     default:
-      return state;
-  }
+        return state;
+    }
 }
 
 export default languageProviderReducer;

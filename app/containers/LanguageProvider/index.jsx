@@ -13,19 +13,19 @@ import { IntlProvider } from 'react-intl';
 import { selectLocale } from './selectors';
 
 export class LanguageProvider extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (
-      <IntlProvider locale={this.props.locale} messages={this.props.messages[this.props.locale]}>
-        {React.Children.only(this.props.children)}
-      </IntlProvider>
-    );
-  }
+    render() {
+        return (
+          <IntlProvider locale={this.props.locale} messages={this.props.messages[this.props.locale]}>
+            {React.Children.only(this.props.children)}
+          </IntlProvider>
+        );
+    }
 }
 
 LanguageProvider.propTypes = {
-  locale: React.PropTypes.string,
-  messages: React.PropTypes.object,
-  children: React.PropTypes.element.isRequired,
+    locale: React.PropTypes.string,
+    messages: React.PropTypes.object,
+    children: React.PropTypes.element.isRequired,
 };
 
 
@@ -35,9 +35,9 @@ const mapStateToProps = createSelector(
 );
 
 function mapDispatchToProps(dispatch) {
-  return {
-    dispatch,
-  };
+    return {
+        dispatch,
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LanguageProvider);

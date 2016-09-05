@@ -10,7 +10,7 @@ const pageContainers = fs.readdirSync('app/containers');
 const components = pageComponents.concat(pageContainers);
 
 function componentExists(comp) {
-  return components.indexOf(comp) >= 0;
+    return components.indexOf(comp) >= 0;
 }
 
 module.exports = componentExists;

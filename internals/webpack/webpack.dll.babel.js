@@ -20,15 +20,15 @@ const dllConfig = defaults(pkg.dllPlugin, dllPlugin.defaults);
 const outputPath = join(process.cwd(), dllConfig.path);
 
 module.exports = {
-  context: process.cwd(),
-  entry: dllConfig.dlls ? dllConfig.dlls : dllPlugin.entry(pkg),
-  devtool: 'eval',
-  output: {
-    filename: '[name].dll.js',
-    path: outputPath,
-    library: '[name]',
-  },
-  plugins: [
-    new webpack.DllPlugin({ name: '[name]', path: join(outputPath, '[name].json') }), // eslint-disable-line no-new
-  ],
+    context: process.cwd(),
+    entry: dllConfig.dlls ? dllConfig.dlls : dllPlugin.entry(pkg),
+    devtool: 'eval',
+    output: {
+        filename: '[name].dll.js',
+        path: outputPath,
+        library: '[name]',
+    },
+    plugins: [
+        new webpack.DllPlugin({ name: '[name]', path: join(outputPath, '[name].json') }), // eslint-disable-line no-new
+    ],
 };
